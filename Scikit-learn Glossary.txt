@@ -1,4 +1,3 @@
-<dl class="glossary">
 <dt id="term-1d">1d<a class="headerlink" href="#term-1d" title="Permalink to this term">¶</a></dt><dt id="term-1d-array">1d array<a class="headerlink" href="#term-1d-array" title="Permalink to this term">¶</a></dt><dd><p>One-dimensional array. A NumPy array whose <code class="docutils literal notranslate"><span class="pre">.shape</span></code> has length 1.
 A vector.</p>
 </dd>
@@ -69,7 +68,6 @@ are documented under an estimator’s <em>Parameters</em> documentation.</p>
 <dt id="term-backwards-compatibility">backwards compatibility<a class="headerlink" href="#term-backwards-compatibility" title="Permalink to this term">¶</a></dt><dd><p>We generally try to maintain backward compatibility (i.e. interfaces
 and behaviors may be extended but not changed or removed) from release
 to release but this comes with some exceptions:</p>
-<dl class="simple">
 <dt>Public API only</dt><dd><p>The behavior of objects accessed through private identifiers
 (those beginning <code class="docutils literal notranslate"><span class="pre">_</span></code>) may be changed arbitrarily between
 versions.</p>
@@ -103,7 +101,6 @@ estimator checks: we may add extra requirements on estimators
 tested with this function, usually when these were informally
 assumed but not formally tested.</p>
 </dd>
-</dl>
 <p>Despite this informal contract with our users, the software is provided
 as is, as stated in the license.  When a release inadvertently
 introduces changes that are not backward compatible, these are known
@@ -300,14 +297,12 @@ while being excepted from other <a class="reference internal" href="#term-common
 <p>Some aspects of estimator tags are currently determined through
 the <a class="reference internal" href="#term-duck-typing"><span class="xref std std-term">duck typing</span></a> of methods like <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> and through
 some special attributes on estimator objects:</p>
-<dl class="simple glossary">
 <dt id="term-_estimator_type"><code class="docutils literal notranslate"><span class="pre">_estimator_type</span></code><a class="headerlink" href="#term-_estimator_type" title="Permalink to this term">¶</a></dt><dd><p>This string-valued attribute identifies an estimator as being a
 classifier, regressor, etc. It is set by mixins such as
 <a class="reference internal" href="modules/generated/sklearn.base.ClassifierMixin.html#sklearn.base.ClassifierMixin" title="sklearn.base.ClassifierMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">base.ClassifierMixin</span></code></a>, but needs to be more explicitly
 adopted on a <a class="reference internal" href="#term-meta-estimator"><span class="xref std std-term">meta-estimator</span></a>.  Its value should usually be
 checked by way of a helper such as <a class="reference internal" href="modules/generated/sklearn.base.is_classifier.html#sklearn.base.is_classifier" title="sklearn.base.is_classifier"><code class="xref py py-func docutils literal notranslate"><span class="pre">base.is_classifier</span></code></a>.</p>
 </dd>
-</dl>
 <p>For more detailed info, see <a class="reference internal" href="developers/develop.html#estimator-tags"><span class="std std-ref">Estimator Tags</span></a>.</p>
 </dd>
 <dt id="term-feature">feature<a class="headerlink" href="#term-feature" title="Permalink to this term">¶</a></dt><dt id="term-features">features<a class="headerlink" href="#term-features" title="Permalink to this term">¶</a></dt><dt id="term-feature-vector">feature vector<a class="headerlink" href="#term-feature-vector" title="Permalink to this term">¶</a></dt><dd><p>In the abstract, a feature is a function (in its mathematical sense)
@@ -576,7 +571,6 @@ between <em>implicit</em> and <em>explicit</em> zeros. Explicit zeros are stored
 while implicit zeros correspond to every element not otherwise defined
 in explicit storage.</p>
 <p>Two semantics for sparse matrices are used in Scikit-learn:</p>
-<dl class="simple">
 <dt>matrix semantics</dt><dd><p>The sparse matrix is interpreted as an array with implicit and
 explicit zeros being interpreted as the number 0.  This is the
 interpretation most often adopted, e.g. when sparse matrices
@@ -593,7 +587,6 @@ in clustering, in representations of nearest neighborhoods
 distance representation where only distances in the neighborhood
 of each point are required.</p>
 </dd>
-</dl>
 <p>When working with sparse matrices, we assume that it is sparse for a
 good reason, and avoid writing code that densifies a user-provided
 sparse matrix, instead maintaining sparsity or raising an error if not
@@ -628,10 +621,6 @@ available for each sample when <a class="reference internal" href="#term-fitting
 <a class="reference internal" href="#term-clusterers"><span class="xref std std-term">clusterers</span></a> and <a class="reference internal" href="#term-outlier-detectors"><span class="xref std std-term">outlier detectors</span></a>.  Unsupervised
 estimators ignore any <a class="reference internal" href="#term-y"><span class="xref std std-term">y</span></a> passed to <a class="reference internal" href="#term-fit"><span class="xref std std-term">fit</span></a>.</p>
 </dd>
-</dl>
-</section>
-<section id="class-apis-and-estimator-types">
-<dl class="glossary">
 <dt id="term-classifier">classifier<a class="headerlink" href="#term-classifier" title="Permalink to this term">¶</a></dt><dt id="term-classifiers">classifiers<a class="headerlink" href="#term-classifiers" title="Permalink to this term">¶</a></dt><dd><p>A <a class="reference internal" href="#term-supervised"><span class="xref std std-term">supervised</span></a> (or <a class="reference internal" href="#term-semi-supervised"><span class="xref std std-term">semi-supervised</span></a>) <a class="reference internal" href="#term-predictor"><span class="xref std std-term">predictor</span></a>
 with a finite set of discrete possible output values.</p>
 <p>A classifier supports modeling some of <a class="reference internal" href="#term-binary"><span class="xref std std-term">binary</span></a>,
@@ -775,10 +764,8 @@ A purely <a class="reference internal" href="#term-transductive"><span class="xr
 </dd>
 <dt id="term-vectorizer">vectorizer<a class="headerlink" href="#term-vectorizer" title="Permalink to this term">¶</a></dt><dt id="term-vectorizers">vectorizers<a class="headerlink" href="#term-vectorizers" title="Permalink to this term">¶</a></dt><dd><p>See <a class="reference internal" href="#term-feature-extractor"><span class="xref std std-term">feature extractor</span></a>.</p>
 </dd>
-</dl>
 <p>There are further APIs specifically related to a small family of estimators,
 such as:</p>
-<dl class="simple glossary">
 <dt id="term-cross-validation-splitter">cross-validation splitter<a class="headerlink" href="#term-cross-validation-splitter" title="Permalink to this term">¶</a></dt><dt id="term-CV-splitter">CV splitter<a class="headerlink" href="#term-CV-splitter" title="Permalink to this term">¶</a></dt><dt id="term-cross-validation-generator">cross-validation generator<a class="headerlink" href="#term-cross-validation-generator" title="Permalink to this term">¶</a></dt><dd><p>A non-estimator family of classes used to split a dataset into a
 sequence of train and test portions (see <a class="reference internal" href="modules/cross_validation.html#cross-validation"><span class="std std-ref">Cross-validation: evaluating estimator performance</span></a>),
 by providing <a class="reference internal" href="#term-split"><span class="xref std std-term">split</span></a> and <a class="reference internal" href="#term-get_n_splits"><span class="xref std std-term">get_n_splits</span></a> methods.
@@ -809,16 +796,12 @@ test data, returning a number. Unlike <a class="reference internal" href="#term-
 a greater returned number must correspond with a <em>better</em> score.
 See <a class="reference internal" href="modules/model_evaluation.html#scoring-parameter"><span class="std std-ref">The scoring parameter: defining model evaluation rules</span></a>.</p>
 </dd>
-</dl>
 <p>Further examples:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="modules/generated/sklearn.metrics.DistanceMetric.html#sklearn.metrics.DistanceMetric" title="sklearn.metrics.DistanceMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">metrics.DistanceMetric</span></code></a></p></li>
 <li><p><a class="reference internal" href="modules/generated/sklearn.gaussian_process.kernels.Kernel.html#sklearn.gaussian_process.kernels.Kernel" title="sklearn.gaussian_process.kernels.Kernel"><code class="xref py py-class docutils literal notranslate"><span class="pre">gaussian_process.kernels.Kernel</span></code></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tree.Criterion</span></code></p></li>
 </ul>
-</section>
-<section id="target-types">
-<dl class="glossary">
 <dt id="term-binary">binary<a class="headerlink" href="#term-binary" title="Permalink to this term">¶</a></dt><dd><p>A classification problem consisting of two classes.  A binary target
 may  be represented as for a <a class="reference internal" href="#term-multiclass"><span class="xref std std-term">multiclass</span></a> problem but with only two
 labels.  A binary decision function is represented as a 1d array.</p>
@@ -911,10 +894,6 @@ labels. See <a class="reference internal" href="#term-multiclass-multioutput"><s
 multioutput</span></a>. We do not currently support modelling mixed
 classification and regression targets.</p>
 </dd>
-</dl>
-</section>
-<section id="methods">
-<dl class="glossary">
 <dt id="term-decision_function"><code class="docutils literal notranslate"><span class="pre">decision_function</span></code><a class="headerlink" href="#term-decision_function" title="Permalink to this term">¶</a></dt><dd><p>In a fitted <a class="reference internal" href="#term-classifier"><span class="xref std std-term">classifier</span></a> or <a class="reference internal" href="#term-outlier-detector"><span class="xref std std-term">outlier detector</span></a>, predicts a
 “soft” score for each sample in relation to each class, rather than the
 “hard” categorical prediction produced by <a class="reference internal" href="#term-predict"><span class="xref std std-term">predict</span></a>.  Its input
@@ -948,7 +927,6 @@ function.</p>
 <dt>outlier detection</dt><dd><p>A 1-dimensional array, where a value greater than or equal to zero
 indicates an inlier.</p>
 </dd>
-</dl>
 </dd>
 <dt id="term-fit"><code class="docutils literal notranslate"><span class="pre">fit</span></code><a class="headerlink" href="#term-fit" title="Permalink to this term">¶</a></dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">fit</span></code> method is provided on every estimator. It usually takes some
 <a class="reference internal" href="#term-samples"><span class="xref std std-term">samples</span></a> <code class="docutils literal notranslate"><span class="pre">X</span></code>, <a class="reference internal" href="#term-targets"><span class="xref std std-term">targets</span></a> <code class="docutils literal notranslate"><span class="pre">y</span></code> if the model is supervised,
@@ -1063,7 +1041,6 @@ integer.</p>
 <p>If the estimator was not already <a class="reference internal" href="#term-fitted"><span class="xref std std-term">fitted</span></a>, calling this method
 should raise a <a class="reference internal" href="modules/generated/sklearn.exceptions.NotFittedError.html#sklearn.exceptions.NotFittedError" title="sklearn.exceptions.NotFittedError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.NotFittedError</span></code></a>.</p>
 <p>Output conventions:</p>
-<dl class="simple">
 <dt>classifier</dt><dd><p>An array of shape <code class="docutils literal notranslate"><span class="pre">(n_samples,)</span></code> <code class="docutils literal notranslate"><span class="pre">(n_samples,</span> <span class="pre">n_outputs)</span></code>.
 <a class="reference internal" href="#term-multilabel"><span class="xref std std-term">Multilabel</span></a> data may be represented as a sparse
 matrix if a sparse matrix was used in fitting. Each element should
@@ -1085,7 +1062,6 @@ or covariance (<code class="docutils literal notranslate"><span class="pre">retu
 value.  In this case, the return value is a tuple of arrays
 corresponding to (prediction mean, std, cov) as required.</p>
 </dd>
-</dl>
 </dd>
 <dt id="term-predict_log_proba"><code class="docutils literal notranslate"><span class="pre">predict_log_proba</span></code><a class="headerlink" href="#term-predict_log_proba" title="Permalink to this term">¶</a></dt><dd><p>The natural logarithm of the output of <a class="reference internal" href="#term-predict_proba"><span class="xref std std-term">predict_proba</span></a>, provided
 to facilitate numerical stability.</p>
@@ -1146,13 +1122,9 @@ with the number of columns fixed after <a class="reference internal" href="#term
 <p>If the estimator was not already <a class="reference internal" href="#term-fitted"><span class="xref std std-term">fitted</span></a>, calling this method
 should raise a <a class="reference internal" href="modules/generated/sklearn.exceptions.NotFittedError.html#sklearn.exceptions.NotFittedError" title="sklearn.exceptions.NotFittedError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.NotFittedError</span></code></a>.</p>
 </dd>
-</dl>
-</section>
-<section id="parameters">
 <p>These common parameter names, specifically used in estimator construction
 (see concept <a class="reference internal" href="#term-parameter"><span class="xref std std-term">parameter</span></a>), sometimes also appear as parameters of
 functions or non-estimator constructors.</p>
-<dl class="glossary">
 <dt id="term-class_weight"><code class="docutils literal notranslate"><span class="pre">class_weight</span></code><a class="headerlink" href="#term-class_weight" title="Permalink to this term">¶</a></dt><dd><p>Used to specify sample weights when fitting classifiers as a function
 of the <a class="reference internal" href="#term-target"><span class="xref std std-term">target</span></a> class.  Where <a class="reference internal" href="#term-sample_weight"><span class="xref std std-term">sample_weight</span></a> is also
 supported and given, it is multiplied by the <code class="docutils literal notranslate"><span class="pre">class_weight</span></code>
@@ -1281,7 +1253,6 @@ another parameter, e.g. <code class="docutils literal notranslate"><span class="
 results returned by the function (<a class="reference internal" href="#term-fit"><span class="xref std std-term">fit</span></a>, <a class="reference internal" href="#term-split"><span class="xref std std-term">split</span></a>, or any
 other function like <a class="reference internal" href="modules/generated/sklearn.cluster.k_means.html#sklearn.cluster.k_means" title="sklearn.cluster.k_means"><code class="xref py py-func docutils literal notranslate"><span class="pre">k_means</span></code></a>). <code class="docutils literal notranslate"><span class="pre">random_state</span></code>’s
 value may be:</p>
-<dl class="simple">
 <dt>None (default)</dt><dd><p>Use the global random state instance from <a class="reference external" href="https://numpy.org/doc/stable/reference/random/index.html#module-numpy.random" title="(in NumPy v1.23)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.random</span></code></a>.
 Calling the function multiple times will reuse
 the same instance, and will produce different results.</p>
@@ -1299,7 +1270,6 @@ of that same random state instance. Calling the function
 multiple times will reuse the same instance, and
 will produce different results.</p>
 </dd>
-</dl>
 <p><a class="reference internal" href="modules/generated/sklearn.utils.check_random_state.html#sklearn.utils.check_random_state" title="sklearn.utils.check_random_state"><code class="xref py py-func docutils literal notranslate"><span class="pre">utils.check_random_state</span></code></a> is used internally to validate the
 input <code class="docutils literal notranslate"><span class="pre">random_state</span></code> and return a <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.23)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a>
 instance.</p>
@@ -1353,11 +1323,7 @@ to a subset of the data, then fine-tune the parameter search on the
 full dataset. For classification, all data in a sequence of
 <code class="docutils literal notranslate"><span class="pre">warm_start</span></code> calls to <code class="docutils literal notranslate"><span class="pre">fit</span></code> must include samples from each class.</p>
 </dd>
-</dl>
-</section>
-<section id="attributes">
 <p>See concept <a class="reference internal" href="#term-attribute"><span class="xref std std-term">attribute</span></a>.</p>
-<dl class="glossary">
 <dt id="term-classes_"><code class="docutils literal notranslate"><span class="pre">classes_</span></code><a class="headerlink" href="#term-classes_" title="Permalink to this term">¶</a></dt><dd><p>A list of class labels known to the <a class="reference internal" href="#term-classifier"><span class="xref std std-term">classifier</span></a>, mapping each
 label to a numerical index used in the model representation our output.
 For instance, the array output from <a class="reference internal" href="#term-predict_proba"><span class="xref std std-term">predict_proba</span></a> has columns
@@ -1402,11 +1368,7 @@ each feature in the predictions of the model.</p>
 data in <a class="reference internal" href="#term-clusterers"><span class="xref std std-term">clusterers</span></a>, identical to the output of
 <a class="reference internal" href="#term-fit_predict"><span class="xref std std-term">fit_predict</span></a>.  See also <a class="reference internal" href="#term-embedding_"><span class="xref std std-term">embedding_</span></a>.</p>
 </dd>
-</dl>
-</section>
-<section id="data-and-sample-properties">
 <p>See concept <a class="reference internal" href="#term-sample-property"><span class="xref std std-term">sample property</span></a>.</p>
-<dl class="glossary">
 <dt id="term-groups"><code class="docutils literal notranslate"><span class="pre">groups</span></code><a class="headerlink" href="#term-groups" title="Permalink to this term">¶</a></dt><dd><p>Used in cross-validation routines to identify samples that are correlated.
 Each value is an identifier such that, in a supporting
 <a class="reference internal" href="#term-CV-splitter"><span class="xref std std-term">CV splitter</span></a>, samples from some <code class="docutils literal notranslate"><span class="pre">groups</span></code> value may not
